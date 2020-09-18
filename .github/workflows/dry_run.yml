@@ -11,5 +11,4 @@ jobs:
       - name: github-labeler
         uses: ./.github/actions/github-labeler
         with:
-          github_token: ${{ secrets.admin_token }}
           dry_run: true
