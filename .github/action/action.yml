@@ -1,0 +1,27 @@
+name: 'Github Labeler'
+description: 'Githubリポジトリのラベルを一斉に作成・変更・削除します'
+author: 'actindi'
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    required: true
+  manifest:
+    description: 'YAML file to be described about labels and repos.'
+    required: false
+    default: 'labels.yaml'
+  dry_run:
+    description: dry run flag
+    required: false
+    default: 'false'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.github_token }}
+    - ${{ inputs.manifest }}
+    - ${{ inputs.dry_run }}
+branding:
+  icon: 'alert-octagon'
+  color: 'blue'
+ 
