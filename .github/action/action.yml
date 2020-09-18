@@ -8,7 +8,7 @@ inputs:
   manifest:
     description: 'YAML file to be described about labels and repos.'
     required: false
-    default: 'labels.yaml'
+    default: 'labels.yml'
   dry_run:
     description: dry run flag
     required: false
