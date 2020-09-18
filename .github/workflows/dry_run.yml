@@ -1,0 +1,15 @@
+name: github-labeler
+on:
+  label:
+    types: [created]
+jobs:
+  github-labeler:
+    name: dry-run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: github-labeler
+        uses: ./.github/actions/github-labeler
+        with:
+          github_token: ${{ secrets.admin_token }}
+          dry_run: true
