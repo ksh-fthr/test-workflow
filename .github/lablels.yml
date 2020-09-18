@@ -27,7 +27,7 @@ labels:
 
 # リポジトリ毎のラベル設定
 repos:
-  - name: actindi/repo1
+  - name: ksh-fthr/FileUtilityTools
     # labels で定義したラベルから設定する
     labels:
       - WIP
@@ -35,10 +35,3 @@ repos:
       - レビュー修正待ち
       - Ship it!
       - dependencies
-  - name: actindi/repo2
-    labels:
-      - WIP
-      - プログラマレビュー待ち
-      - デザイナレビュー待ち
-      - レビュー修正待ち
-      - Ship it!
