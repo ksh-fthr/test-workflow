@@ -18,6 +18,15 @@ labels:
 
 # リポジトリ毎のラベル設定
 repos:
+  - name: ksh-fthr/test_workflow
+    # labels で定義したラベルから設定する
+    labels:
+      - CS
+      - DEV
+      - Document
+      - Release
+      - Hotfix
+
   - name: ksh-fthr/FileUtilityTools
     # labels で定義したラベルから設定する
     labels:
