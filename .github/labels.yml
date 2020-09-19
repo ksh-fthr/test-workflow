@@ -1,37 +1,28 @@
 # ラベルの定義
 labels:
-  - name: "WIP"
-    description: "作業中"
+  - name: "CS"
+    description: "カスタマーサクセス"
     color: "d4c5f9"
-  - name: "レビュー待ち"
-    description: "レビュー待ち"
+  - name: "DEV"
+    description: "開発"
     color: "bfe5bf"
-  - name: "プログラマレビュー待ち"
-    description: "レビュー待ち"
+  - name: "Document"
+    description: "ドキュメント"
     color: "bfe5bf"
-  - name: "デザイナレビュー待ち"
-    description: "レビュー待ち"
+  - name: "Release"
+    description: "リリース"
     color: "bfdadc"
-  - name: "レビュー修正待ち"
-    description: "指摘事項を修正してください"
+  - name: "Hotfix"
+    description: "不具合修正"
     color: "fef2c0"
-  - name: "Ship it!"
-    description: "リリースしましょう"
-    color: "c7def8"
-  - name: "dependencies"
-    description: "Pull requests that update a dependency file"
-    color: "0366d6"
-  - name: "bug"
-    description: "Something isn't working"
-    color: "d73a4a"
 
 # リポジトリ毎のラベル設定
 repos:
   - name: ksh-fthr/FileUtilityTools
     # labels で定義したラベルから設定する
     labels:
-      - WIP
-      - レビュー待ち
-      - レビュー修正待ち
-      - Ship it!
-      - dependencies
+      - CS
+      - DEV
+      - Document
+      - Release
+      - Hotfix
