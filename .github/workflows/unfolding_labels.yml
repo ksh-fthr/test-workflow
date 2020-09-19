@@ -30,8 +30,8 @@
 name: unfolding labels
 
 on:
-  label:
-    types: [created]
+  issues:
+    types: [opened]
     paths:
       - .github/labels.yml
 
