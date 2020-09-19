@@ -1,4 +1,4 @@
-# name: Sync labels
+# name: unfolding labels
 # on:
 #   label:
 #     types: [created]
@@ -27,7 +27,7 @@
 #         env:
 #           LOG: trace
 
-name: Sync labels
+name: unfolding labels
 
 on:
   label:
