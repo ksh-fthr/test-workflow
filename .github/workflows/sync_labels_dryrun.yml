@@ -32,8 +32,8 @@ name: Sync labels
 on:
   label:
     types: [created]
-  paths:
-    - .github/labels.yml
+    paths:
+      - .github/labels.yml
 
 jobs:
   sync:
