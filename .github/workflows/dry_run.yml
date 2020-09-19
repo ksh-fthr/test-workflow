@@ -1,14 +1,28 @@
-name: Dry Run
+name: Sync labels
 on:
   label:
     types: [created]
+
 jobs:
-  github-labeler:
-    name: dry-run
+  sync:
+    name: Dry run
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: github-labeler
-        uses: ./.github/actions/action.yml
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Sync labels with dryrun option
+        uses: b4b4r07/github-labeler@master
         with:
-          dry_run: true
+          dryrun: 'true'
+        id: labeler
+      - name: Post github-labeler command result to GitHub comment
+        uses: b4b4r07/action-github-comment@master
+        if: steps.labeler.outputs.result
+        with:
+          body: |
+            ## github-labeler result
+            ```
+            ${{ steps.labeler.outputs.result }}
+            ```
+        env:
+          LOG: trace
