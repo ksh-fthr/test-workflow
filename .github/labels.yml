@@ -16,7 +16,7 @@ labels:
     description: "不具合修正"
     color: "fef2c0"
 
-# リポジトリ毎のラベル設定
+# 展開対象のリポジトリと設定するラベル
 repos:
   - name: ksh-fthr/test_workflow
     # labels で定義したラベルから設定する
