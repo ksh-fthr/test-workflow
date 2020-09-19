@@ -1,28 +1,46 @@
+# name: Sync labels
+# on:
+#   label:
+#     types: [created]
+
+# jobs:
+#   sync:
+#     name: Dry run
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v1
+#       - name: Sync labels with dryrun option
+#         uses: b4b4r07/github-labeler@master
+#         with:
+#           dryrun: 'true'
+#         id: labeler
+#       - name: Post github-labeler command result to GitHub comment
+#         uses: b4b4r07/action-github-comment@master
+#         if: steps.labeler.outputs.result
+#         with:
+#           body: |
+#             ## github-labeler result
+#             ```
+#             ${{ steps.labeler.outputs.result }}
+#             ```
+#         env:
+#           LOG: trace
+
 name: Sync labels
+
 on:
   label:
     types: [created]
+    paths:
+      - .github/labels.yml
 
 jobs:
   sync:
-    name: Dry run
+    name: Run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Sync labels with dryrun option
+        uses: actions/checkout@1.0.0
+      - name: Sync labels
         uses: b4b4r07/github-labeler@master
-        with:
-          dryrun: 'false'
-        id: labeler
-      - name: Post github-labeler command result to GitHub comment
-        uses: b4b4r07/action-github-comment@master
-        if: steps.labeler.outputs.result
-        with:
-          body: |
-            ## github-labeler result
-            ```
-            ${{ steps.labeler.outputs.result }}
-            ```
-        env:
-          LOG: trace
