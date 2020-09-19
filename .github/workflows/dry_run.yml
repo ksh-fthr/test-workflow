@@ -1,4 +1,4 @@
-name: github-labeler
+name: Dry Run
 on:
   label:
     types: [created]
@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: github-labeler
-        uses: ./.github/actions/github-labeler
+        uses: ./.github/actions/action.yml
         with:
           dry_run: true
