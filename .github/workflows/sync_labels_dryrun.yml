@@ -13,7 +13,7 @@ jobs:
       - name: Sync labels with dryrun option
         uses: b4b4r07/github-labeler@master
         with:
-          dryrun: 'true'
+          dryrun: 'false'
         id: labeler
       - name: Post github-labeler command result to GitHub comment
         uses: b4b4r07/action-github-comment@master
